@@ -71,7 +71,7 @@
     }
 
     .panel > *:first-child {transform: translateY(-100%);} /*takes top line and stores it above content*/
-    .panel.open-active > *:first-child {transform: translateY(0);}
+    .panel.open-active > *:first-child {transform: translateY(0);}  
     .panel > *:last-child {transform: translateY(100%);} /*Takes bottom line and stores it below content*/
     .panel.open-active > *:last-child {transform: translateY(0);}
 
@@ -127,13 +127,13 @@
     const panels = document.querySelectorAll('.panel');     /*links to all divs named .panel*/
 
     function toggleOpen() {                     /**/
-      this.classList.toggle('open');            /*Triggers a CSS open. I guess this creates a new div. Need to learn*/
+      this.classList.toggle('open');            /*Triggers a CSS open. I guess this creates a new div. Triggers .panels.open in CSS*/
     }
 
     function toggleActive(e) {                  /**/
       
-      if (e.propertyName.includes('flex')) {    /**/
-        this.classList.toggle('open-active')    /**/
+      if (e.propertyName.includes('flex')) {    /*If it involes flex...*/
+        this.classList.toggle('open-active')    /*...toggle panel.open-active*/
       }
     }
 
